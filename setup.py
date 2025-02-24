@@ -1,6 +1,5 @@
 from setuptools import find_packages, setup
 
-IGNORE_HYPHAN = '-e'
 
 def get_requirement(file_path:str) ->list:
     """
@@ -10,9 +9,6 @@ def get_requirement(file_path:str) ->list:
     with open(file_path) as f:
         requires = f.readlines()
         [r.replace("\n","") for r in requires]
-
-        if IGNORE_HYPHAN in requires:
-            requires.remove(IGNORE_HYPHAN)
 
     return requires
 
